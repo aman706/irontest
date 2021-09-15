@@ -65,7 +65,7 @@ RUN apt update && apt upgrade -y && \
 RUN pip3 install --upgrade pip setuptools
 
 # Copy Python Requirements to /root/IronRobo
-RUN git clone -b shiken https://github.com/Mr-Dark-Prince/IronRobo /root/IronRobo
+RUN git clone -b shiken https://github.com/aman706/IRONMAN2.0 /root/IronRobo
 WORKDIR /root/IronRobo
 
 #Copy config file to /root/IronRobo/IronRobo
