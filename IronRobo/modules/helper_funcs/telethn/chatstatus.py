@@ -44,11 +44,11 @@ async def is_user_admin(user_id: int, chat_id):
 
 async def ironrobo_is_admin(chat_id: int):
     status = False
-    masha = await telethn.get_me()
+    ironrobo = await telethn.get_me()
     async for user in telethn.iter_participants(
         chat_id, filter=ChannelParticipantsAdmins
     ):
-        if masha.id == user.id:
+        if ironrobo.id == user.id:
             status = True
             break
     return status
