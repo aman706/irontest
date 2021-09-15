@@ -631,7 +631,7 @@ Group admins/group owners do not need these commands.
  ❍ /gignoreblue*:* <word>*:* Globally ignorea bluetext cleaning of saved word across IronRobo.
  ❍ /ungignoreblue*:* <word>*:* Remove said command from global cleaning list
 
-*Masha Core*
+*Ironman Core*
 *Owner only*
  ❍ /send*:* <module name>*:* Send module
  ❍ /install*:* <reply to a .py>*:* Install module 
