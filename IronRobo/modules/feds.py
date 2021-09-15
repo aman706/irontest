@@ -1460,10 +1460,10 @@ def fed_ban_list(update: Update, context: CallbackContext):
                 )
                 backups += "\n"
             with BytesIO(str.encode(backups)) as output:
-                output.name = "masha_fbanned_users.csv"
+                output.name = "ironrobo_fbanned_users.csv"
                 update.effective_message.reply_document(
                     document=output,
-                    filename="masha_fbanned_users.csv",
+                    filename="ironrobo_fbanned_users.csv",
                     caption="Total {} User are blocked by Federation {}.".format(
                         len(getfban), info["fname"]
                     ),
