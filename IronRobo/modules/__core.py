@@ -9,7 +9,7 @@ from IronRobo import OWNER_ID
 from IronRobo import TEMP_DOWNLOAD_DIRECTORY as path
 from IronRobo import TEMP_DOWNLOAD_DIRECTORY
 from datetime import datetime
-water = './IronRobo/resources/masha.jpg'
+water = './IronRobo/resources/ironrobo.jpg'
 client = tbot
 
 @register(pattern=r"^/send ?(.*)")
