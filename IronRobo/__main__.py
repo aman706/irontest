@@ -73,7 +73,7 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 
-PM_START_TEXT = """
+PM_START_TEXT = ""
 нєℓℓσ ι αm ironman (https://telegra.ph/file/895bfecd37c2676860eff.jpg)* ѕυρєя gяσυρ мαηαgємєηт вσт. 
 ι ¢αη нєℓρ уσυ тσ єαѕιℓу мαιηтαιη уσυя gяσυσ! нιт` *📚Commands* `buttoη вєℓσω тσ ƒιη∂ συт тнє ¢σммαη∂ѕ тσ υѕє мє ƒσя вєттєя єƒƒι¢ιєηу σƒ уσυя gяσυρ
 .` 
@@ -103,7 +103,7 @@ buttons = [
 ]
 
 
-HELP_STRINGS = """
+HELP_STRINGS = ""
 `Hi.. I'm` Ironman(https://telegra.ph/file/895bfecd37c2676860eff.jpg)
 `Click on the buttons below to get documentation about specific modules..`"""
 
