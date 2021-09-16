@@ -6,7 +6,7 @@ import re
 
 from pathlib import Path
 from telethon import events
-
+from IronRobo import telethn
 
 
 def register(**args):
