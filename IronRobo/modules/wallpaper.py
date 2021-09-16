@@ -4,7 +4,7 @@ import requests as r
 from IronRobo import SUPPORT_CHAT, WALL_API, dispatcher
 from IronRobo.modules.disable import DisableAbleCommandHandler
 from telegram import Update
-from telegram.ext import CallbackContext, run_asy
+from telegram import CallbackContext, run_asy
 
 @run_async
 def wall(update: Update, context: CallbackContext):
