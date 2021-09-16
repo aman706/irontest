@@ -72,47 +72,44 @@ def get_readable_time(seconds: int) -> str:
 
     return ping_time
 
+Ironman_IMG = "https://telegra.ph/file/8b6f8f2bb4ff3912634c7.jpg"
 
 PM_START_TEXT = """
-нєℓℓσ ι αm ironman (https://telegra.ph/file/895bfecd37c2676860eff.jpg)* ѕυρєя gяσυρ мαηαgємєηт вσт. 
-ι ¢αη нєℓρ уσυ тσ єαѕιℓу мαιηтαιη уσυя gяσυσ! нιт` *📚Commands* `buttoη вєℓσω тσ ƒιη∂ συт тнє ¢σммαη∂ѕ тσ υѕє мє ƒσя вєттєя єƒƒι¢ιєηу σƒ уσυя gяσυρ
-.` 
+`Heya` 🤗 `I am` **Ironman** `your group super bot`
+`I am very fast and  more efficient  I provide awesome  features which a owner will look for  filter ,warn system,note keeping system flood!`
 """
 
 buttons = [
     [
         InlineKeyboardButton(
-            text="➕️ ADD єм¢єє TO YOUR GROUP ➕️", url="t.me/ironman_groupassist_bot?startgroup=true"),
+            text="❔Hᴇʟᴘ & Cᴏᴍᴍᴀɴᴅꜱ ❔", callback_data="help_back"),
     ],
     [
-        InlineKeyboardButton(text="ℹ️ ABOUT", callback_data="ironman_"),
-        InlineKeyboardButton(text="📚 COMMANDS", callback_data="help_back"),
-    ],
-    [
-        InlineKeyboardButton(text="🔥 DEVS", url="t.me/ironmandevs"),
-        InlineKeyboardButton(text="🔥 OWNER", url="t.me/theprofessor_isback"),
-    ],
-    [
-    [
+        InlineKeyboardButton(text="🔥 Sᴏᴜʀᴄᴇ", url=f"https://github.com/DarkCybers/Ironman"),
         InlineKeyboardButton(
-            text="💾 SOURCE", url="t.me/theprofesssor_isback"),
-        InlineKeyboardButton(
-            text="👥 SUPPORT", url="https://t.me/ironman_support1"
+            text="Vᴄ Pʟᴀʏᴇʀ 🎶", url=f"https://telegra.ph/Ironman-Vc-Player-08-19"
         ),
+    ],
+    [
+        InlineKeyboardButton(text="📜 Aʙᴏᴜᴛ", callback_data="ironman_"),
+        InlineKeyboardButton(
+            text="Bᴀꜱɪᴄ Hᴇʟᴘ 👮", callback_data="ironman_basichelp"
+        ),
+    ],
+    [
+        InlineKeyboardButton(text="💕 Sᴜᴍᴍᴏɴ Mᴇ 💕", url="http://t.me/ironman_groupassist_bot ?startgroup=true"),
     ],
 ]
 
 
 HELP_STRINGS = """
-`Hi.. I'm` Ironman(https://telegra.ph/file/895bfecd37c2676860eff.jpg)
-`Click on the buttons below to get documentation about specific modules..`"""
+**SETTINGS**
+`Click on the buttons below to get documentation about specific modules..`)"""
 
-IRONMAN_IMG = "https://telegra.ph/file/895bfecd37c2676860eff.jpg"
+
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
- You can support the project via [Telegram](t.me/Aquila_14) or by contacting @EmceeDevs \
- Supporting isnt always financial! \
- Those who cannot provide monetary support are welcome to help us develop the bot at @EmceeDevs."""
+ @SiderzDonate's 💕"""
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -221,14 +218,16 @@ def start(update: Update, context: CallbackContext):
                 timeout=60,
             )
     else:
-        update.effective_message.reply_text(
-            "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>".format(
+        update.effective_message.reply_photo(
+            Ironman_IMG, caption= "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ", url="t.me/SiderzChat")]]
+            ),
         )
-
-
+        
 def error_handler(update, context):
     """Log the error and send a telegram message to notify the developer."""
     # Log the error before we do anything else, so we can see it even if something breaks.
@@ -353,31 +352,32 @@ def help_button(update, context):
 
 
 @run_async
-def ironman_about_callback(update, context):
+def Ironman_about_callback(update, context):
     query = update.callback_query
-    if query.data == "ironman_":
+    if query.data == "Ironman_":
         query.message.edit_text(
-            text=""" ℹ️ I'm *Ironman*, a powerful group management bot built to help you manage your group easily.
-                 \n❍ I can restrict users.
-                 \n❍ I can greet users with customizable welcome messages and even set a group's rules.
-                 \n❍ I have an advanced anti-flood system.
-                 \n❍ I can warn users until they reach max warns, with each predefined actions such as ban, mute, kick, etc.
-                 \n❍ I have a note keeping system, blacklists, and even predetermined replies on certain keywords.
-                 \n❍ I check for admins' permissions before executing any command and more stuffs
-                 \n\n_ironman's licensed under the GNU General Public License v3.0_
-                 \nHere is the [💾Repository](t.me/theprofesssor_isback).
-                 \n\nIf you have any question about Emcee, let us know at @ironman_support1.""",
+            text=""" 𝗜𝗡𝗡𝗘𝗫𝗜𝗔 - A bot to manage your groups with additional features!
+            \nHere's the basic help regarding use of Ironman.
+            
+            \nAlmost all modules usage defined in the help menu, checkout by sending `/help`
+            \nReport error/bugs click the Button""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
-                 [
-                    InlineKeyboardButton(text="Back", callback_data="ironman_back")
-                 ]
+                    [
+                        InlineKeyboardButton(
+                            text="Bᴜɢ'ꜱ", url="t.me/SiderzChat"
+                        ),
+                        InlineKeyboardButton(
+                            text="Bᴏᴛ Lɪꜱᴛ", url="t.me/SiderzBot/11"
+                        ),
+                    ],
+                    [InlineKeyboardButton(text="Back", callback_data="Ironman_back")],
                 ]
             ),
         )
-    elif query.data == "ironman_back":
+    elif query.data == "Ironman_back":
         query.message.edit_text(
                 PM_START_TEXT,
                 reply_markup=InlineKeyboardMarkup(buttons),
@@ -386,14 +386,114 @@ def ironman_about_callback(update, context):
                 disable_web_page_preview=False,
         )
 
+    elif query.data == "Ironman_basichelp":
+        query.message.edit_text(
+            text=f"*Here's basic Help regarding* *How to use Me?*"
+            f"\n\n• Firstly Add {dispatcher.bot.first_name} to your group by pressing [here](http://t.me/{dispatcher.bot.username}?startgroup=true)\n"
+            f"\n• After adding promote me manually with full rights for faster experience.\n"
+            f"\n• Than send `/admincache@IronRobo` in that chat to refresh admin list in My database.\n"
+            f"\n\n*All done now use below given button's to know about use!*\n"
+            f"",
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                 [
+                    InlineKeyboardButton(text="Aᴅᴍɪɴ", callback_data="Ironman_admin"),
+                    InlineKeyboardButton(text="Nᴏᴛᴇꜱ", callback_data="Ironman_notes"),
+                 ],
+                 [
+                    InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ", callback_data="Ironman_support"),
+                    InlineKeyboardButton(text="Cʀᴇᴅɪᴛ", callback_data="Ironman_credit"),
+                 ],
+                 [
+                    InlineKeyboardButton(text="Back", callback_data="Ironman_back"),
+                 
+                 ]
+                ]
+            ),
+        )
+    elif query.data == "Ironman_admin":
+        query.message.edit_text(
+            text=f"*Let's make your group bit effective now*"
+            f"\nCongragulations, Ironman now ready to manage your group."
+            f"\n\n*Admin Tools*"
+            f"\nBasic Admin tools help you to protect and powerup your group."
+            f"\nYou can ban members, Kick members, Promote someone as admin through commands of bot."
+            f"\n\n*Welcome*"
+            f"\nLets set a welcome message to welcome new users coming to your group."
+            f"send `/setwelcome [message]` to set a welcome message!",
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="Back", callback_data="Ironman_basichelp")]]
+            ),
+        )
 
+    elif query.data == "Ironman_notes":
+        query.message.edit_text(
+            text=f"<b> Setting up notes</b>"
+            f"\nYou can save message/media/audio or anything as notes"
+            f"\nto get a note simply use # at the beginning of a word"
+            f"\n\nYou can also set buttons for notes and filters (refer help menu)",
+            parse_mode=ParseMode.HTML,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="Back", callback_data="Ironman_basichelp")]]
+            ),
+        )
+    elif query.data == "Ironman_support":
+        query.message.edit_text(
+            text="* Ironman support chats*"
+            "\nJoin Support Group/Channel",
+            parse_mode=ParseMode.MARKDOWN,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                 [
+                    InlineKeyboardButton(text="Lᴏɢ'ꜱ", url="t.me/IronmanLogs"),
+                    InlineKeyboardButton(text="Fᴇᴅ", url="t.me/SiderzFedChat"),
+                 ],
+                 [
+                    InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ", url="t.me/SiderzChat"),
+                    InlineKeyboardButton(text="Uᴘᴅᴀᴛᴇꜱ", url="https://t.me/SiderzBot"),
+                 ],
+                 [
+                    InlineKeyboardButton(text="Back", callback_data="Ironman_basichelp"),
+                 
+                 ]
+                ]
+            ),
+        )
+    elif query.data == "Ironman_credit":
+        query.message.edit_text(
+            text=f"<b> CREDIT FOR Ironman DEV'S</b>\n"
+            f"\nHere Some Developers Helping in Making The Ironman Bot",
+            parse_mode=ParseMode.HTML,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                 [
+                    InlineKeyboardButton(text="Sᴀᴍᴍʏ", url="t.me/useIes"),
+                    InlineKeyboardButton(text="Bʟᴀᴢᴇ", url="t.me/piroXpower"),
+                 ],
+                 [
+                    InlineKeyboardButton(text="Iɴꜰɪɴɪᴛʏ", url="t.me/hell_king_infinity"),
+                    InlineKeyboardButton(text="Zᴀʟɪᴍ", url="https://t.me/Jalim_Munda"),
+                 ],
+                 [
+                    InlineKeyboardButton(text="Back", callback_data="Ironman_basichelp"),
+                 
+                 ]
+                ]
+            ),
+        )
+        
+        
 @run_async
 def Source_about_callback(update, context):
     query = update.callback_query
     if query.data == "source_":
         query.message.edit_text(
-            text=""" Hi..🤗 I'm *Emcee*
-                 \nHere is the [Source Code](t.me/theprofesssor_isback) .""",
+            text=""" Hi..😻 I'm *Ironman*
+                 \nHere is the [🔥Source Code🔥](https://github.com/DarkCybers/IronRobo) .""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -444,10 +544,16 @@ def get_help(update: Update, context: CallbackContext):
                 [
                     [
                         InlineKeyboardButton(
-                            text="Help",
+                            text="Hᴇʟᴘ ❔",
                             url="t.me/{}?start=help".format(context.bot.username),
                         )
-                    ]
+                    ],
+                    [
+                        InlineKeyboardButton(
+                            text="Sᴜᴘᴘᴏʀᴛ Cʜᴀᴛ 📢 ",
+                            url="https://t.me/{}".format(SUPPORT_CHAT),
+                        )
+                    ],
                 ]
             ),
         )
@@ -640,7 +746,7 @@ def donate(update: Update, context: CallbackContext):
             DONATE_STRING, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True
         )
 
-        if OWNER_ID != 254318997 and DONATION_LINK:
+        if OWNER_ID != 1947924017 and DONATION_LINK:
             update.effective_message.reply_text(
                 "You can also donate to the person currently running me "
                 "[here]({})".format(DONATION_LINK),
@@ -688,7 +794,7 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "Yes I'm alive 😹")
+            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "I Aᴍ Aʟɪᴠᴇ 🔥")
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!"
@@ -705,7 +811,7 @@ def main():
     settings_handler = CommandHandler("settings", get_settings)
     settings_callback_handler = CallbackQueryHandler(settings_button, pattern=r"stngs_")
 
-    about_callback_handler = CallbackQueryHandler(ironman_about_callback, pattern=r"ironman_")
+    about_callback_handler = CallbackQueryHandler(Ironman_about_callback, pattern=r"Ironman_")
     source_callback_handler = CallbackQueryHandler(Source_about_callback, pattern=r"source_")
 
     donate_handler = CommandHandler("donate", donate)
