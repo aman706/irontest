@@ -74,7 +74,7 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = ""
-нєℓℓσ ι αm ironman (https://telegra.ph/file/895bfecd37c2676860eff.jpg)* ѕυρєя gяσυρ мαηαgємєηт вσт. 
+нєℓℓσ ι am [Ironman](https://telegra.ph/file/895bfecd37c2676860eff.jpg)* ѕυρєя gяσυρ мαηαgємєηт вσт. 
 ι ¢αη нєℓρ уσυ тσ єαѕιℓу мαιηтαιη уσυя gяσυσ! нιт` *📚Commands* `buttoη вєℓσω тσ ƒιη∂ συт тнє ¢σммαη∂ѕ тσ υѕє мє ƒσя вєттєя єƒƒι¢ιєηу σƒ уσυя gяσυρ
 .` 
 """
