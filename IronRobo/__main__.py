@@ -4,7 +4,6 @@ import re
 from sys import argv
 from typing import Optional
 
-
 from IronRobo import (
     ALLOW_EXCL,
     CERT_PATH,
@@ -75,46 +74,37 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-нєℓℓσ ι αм [єм¢єє](https://telegra.ph/file/3fa49f4cfbb07872dd715.jpg)* ѕυρєя gяσυρ мαηαgємєηт вσт. 
-ι ¢αη нєℓρ уσυ тσ єαѕιℓу мαιηтαιη уσυя gяσυσ! нιт` *📚Commands* `buttoη вєℓσω тσ ƒιη∂ συт тнє ¢σммαη∂ѕ тσ υѕє мє ƒσя вєттєя єƒƒι¢ιєηу σƒ уσυя gяσυρ
-.` 
+ʜᴇʟʟᴏ [🤗](https://telegra.ph/file/ebf62ff4c5668adcfa28c.jpg), ɪᴍ ʏᴏɴᴇ ᴀ ʜɪɢʜʏ ᴀᴅᴠᴀɴᴄᴇᴅ ʙᴏᴛ ᴡɪᴛʜ ʟᴏᴛꜱ ᴏꜰ ᴀᴍᴀᴢɪɴɢ ᴛᴏᴏʟꜱ.
+`ɪ'ᴍ ʜᴇʀᴇ ᴛᴏ ʜᴇʟᴘ ʏᴏᴜ ᴍᴀɴᴀɢᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘꜱ! ʜɪᴛ` /help   
 """
 
 buttons = [
     [
         InlineKeyboardButton(
-            text="➕️ ADD єм¢єє TO YOUR GROUP ➕️", url="t.me/Emcee_Bot?startgroup=true"),
+            text="➕️ ᴀᴅᴅ ʏᴏɴᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕️", url="t.me/Yone_Robot?startgroup=true"),
     ],
     [
-        InlineKeyboardButton(text="ℹ️ ABOUT", callback_data="masha_"),
-        InlineKeyboardButton(text="📚 COMMANDS", callback_data="help_back"),
-    ],
-    [
-        InlineKeyboardButton(text="🔥 DEVS", url="t.me/EmceeDevs"),
-        InlineKeyboardButton(text="🔥 OWNER", url="t.me/Aquila_14"),
-    ],
-    [
-    [
+        InlineKeyboardButton(text="ᴀʙᴏᴜᴛ", callback_data="yone_"),
         InlineKeyboardButton(
-            text="💾 SOURCE", url="t.me/lucifermorningstarbackup"),
-        InlineKeyboardButton(
-            text="👥 SUPPORT", url="https://t.me/EmceeSupport"
+            text="ꜱᴜᴘᴘᴏʀᴛ", url=f"https://t.me/{SUPPORT_CHAT}"
         ),
+    ],
+    [
+        InlineKeyboardButton(text="ʜᴇʟᴘ & ᴄᴏᴍᴍᴀɴᴅꜱ❔", callback_data="help_back"),
     ],
 ]
 
 
 HELP_STRINGS = """
-`Hi.. I'm` [EMCEE🙋‍♀️](https://telegra.ph/file/3fa49f4cfbb07872dd715.jpg)
-`Click on the buttons below to get documentation about specific modules..`"""
+`ʜɪ.. ɪ'ᴍ` [yone🙋‍♀️](https://telegra.ph/file/082096b101615e33eaf19.jpg) 
+`ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴꜱ ʙᴇʟᴏᴡ ᴛᴏ ɢᴇᴛ ᴅᴏᴄᴜᴍᴇɴᴛᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ꜱᴘᴇᴄɪꜰɪᴄ ᴍᴏᴅᴜʟᴇꜱ..`"""
 
-
-MASHA_IMG = "https://telegra.ph/file/3fa49f4cfbb07872dd715.jpg"
+yone_IMG = "https://telegra.ph/file/7e61fe06a9c02747249c4.jpg"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
- You can support the project via [Telegram](t.me/Aquila_14) or by contacting @EmceeDevs \
+ You can support the project via [Paypal](#) or by contacting @kittu5588 \
  Supporting isnt always financial! \
- Those who cannot provide monetary support are welcome to help us develop the bot at @EmceeDevs."""
+ Those who cannot provide monetary support are welcome to help us develop the bot at ."""
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -355,31 +345,31 @@ def help_button(update, context):
 
 
 @run_async
-def Masha_about_callback(update, context):
+def yone_about_callback(update, context):
     query = update.callback_query
-    if query.data == "masha_":
+    if query.data == "yone_":
         query.message.edit_text(
-            text=""" ℹ️ I'm *Emcee*, a powerful group management bot built to help you manage your group easily.
+            text=""" ℹ️ I'm *yone*, a powerful group management bot built to help you manage your group easily.
                  \n❍ I can restrict users.
                  \n❍ I can greet users with customizable welcome messages and even set a group's rules.
                  \n❍ I have an advanced anti-flood system.
                  \n❍ I can warn users until they reach max warns, with each predefined actions such as ban, mute, kick, etc.
                  \n❍ I have a note keeping system, blacklists, and even predetermined replies on certain keywords.
                  \n❍ I check for admins' permissions before executing any command and more stuffs
-                 \n\n_Masha's licensed under the GNU General Public License v3.0_
-                 \nHere is the [💾Repository](t.me/lucifermorningstarbackup).
-                 \n\nIf you have any question about Emcee, let us know at @EmceeSupport.""",
+                 \n\n_yone's licensed under the GNU General Public License v3.0_
+                 \nHere is the [💾Repository](https://github.com/noob-kittu/IronRobo).
+                 \n\nIf you have any question about yone, let us know at .""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Back", callback_data="masha_back")
+                    InlineKeyboardButton(text="Back", callback_data="yone_back")
                  ]
                 ]
             ),
         )
-    elif query.data == "masha_back":
+    elif query.data == "yone_back":
         query.message.edit_text(
                 PM_START_TEXT,
                 reply_markup=InlineKeyboardMarkup(buttons),
@@ -394,8 +384,8 @@ def Source_about_callback(update, context):
     query = update.callback_query
     if query.data == "source_":
         query.message.edit_text(
-            text=""" Hi..🤗 I'm *Emcee*
-                 \nHere is the [Source Code](t.me/lucifermorningstarbackup) .""",
+            text=""" Hi..🤗 I'm *yone*
+                 \nHere is the [Source Code](https://github.com/Noob-kittu/IronRobo) .""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -707,7 +697,7 @@ def main():
     settings_handler = CommandHandler("settings", get_settings)
     settings_callback_handler = CallbackQueryHandler(settings_button, pattern=r"stngs_")
 
-    about_callback_handler = CallbackQueryHandler(Masha_about_callback, pattern=r"masha_")
+    about_callback_handler = CallbackQueryHandler(yone_about_callback, pattern=r"yone_")
     source_callback_handler = CallbackQueryHandler(Source_about_callback, pattern=r"source_")
 
     donate_handler = CommandHandler("donate", donate)
