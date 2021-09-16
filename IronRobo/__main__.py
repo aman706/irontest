@@ -103,9 +103,10 @@ buttons = [
 ]
 
 
-HELP_STRINGS = ""
+HELP_STRINGS =  """
 `Hi.. I'm` [Ironman](https://telegra.ph/file/895bfecd37c2676860eff.jpg)
 `Click on the buttons below to get documentation about specific modules..`"""
+
 
 IRONMAN_IMG = "https://telegra.ph/file/895bfecd37c2676860eff.jpg"
 
